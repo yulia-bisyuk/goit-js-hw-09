@@ -13,18 +13,11 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
-function changeBodyColor() {
-    
-    const currentColor = getRandomHexColor();
-    refs.body.style.backgroundColor = currentColor;
-}
-
 function onStartBtnClick() {
 
-    intervalId = setInterval(changeBodyColor, 1000);
+    intervalId = setInterval(() => refs.body.style.backgroundColor = getRandomHexColor(), 1000);
     refs.startBtn.setAttribute('disabled', true);
     refs.stopBtn.removeAttribute('disabled');
-    
 }
 
 function onStopBtnClick() {
