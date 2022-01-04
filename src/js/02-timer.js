@@ -36,8 +36,7 @@ const options = {
   minuteIncrement: 1,
     onClose(selectedDates) {
 
-        const date = new Date();
-        if (selectedDates[0] <= date) {
+        if (selectedDates[0] <= new Date()) {
             Notiflix.Notify.warning('Please choose a date in the future');
         } 
         else {
@@ -67,7 +66,6 @@ function onStartClick() {
     }
     }, 1000);
 }
-
 
 function addLeadingZero(value) {
     return String(value).padStart(2, '0');
